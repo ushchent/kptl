@@ -50,7 +50,6 @@ function pushDates(startMonth, step, year, weekday, everyWeekDay, results) {
     }
 }
 
-
 function findDates(year, weekday, everyWeekDay, everyQuarterMonth) {
   var results = [];
   
@@ -65,9 +64,6 @@ function findDates(year, weekday, everyWeekDay, everyQuarterMonth) {
   }
   return results;
 }
-
-
-
 
 var button = document.getElementById("calc");
 button.onclick = function() {
@@ -96,27 +92,22 @@ button.onclick = function() {
 };
 
 window.onload = function() {
-var request = new XMLHttpRequest();
-var gallery = document.getElementById("gallery");
+  var request = new XMLHttpRequest();
+  var gallery = document.getElementById("gallery");
 
-
-request.onreadystatechange = function() {
-        if (request.readyState === 4) {
-            jsonData = JSON.parse(request.responseText);
-            for (var i = 0; i < 5; i++) {
-  var face = document.createElement("div");
-  face.innerHTML = "<img src='img/" +
-                    jsonData[i].photo + "'>"
-  gallery.appendChild(face);
+  request.onreadystatechange = function() {
+      if (request.readyState === 4) {
+          jsonData = JSON.parse(request.responseText);
+          for (var i = 0; i < 5; i++) {
+              var face = document.createElement("div");
+              face.innerHTML = "<img src='img/" +
+                                jsonData[i].photo + "'>"
+              gallery.appendChild(face);
   
 }
-            
-            
+
         };
       };
     request.open("GET", "data/data.json", true);
     request.send(null);
-
-
-
 }
