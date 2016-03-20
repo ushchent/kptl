@@ -13,8 +13,70 @@
 <main>
     <h1>Календарь прямых телефонных линий</h1>
     <p id="caption">С руководством республиканских государственных органов Беларуси</p>
+    
+    <h2>Калькулятор дат прямых телефонных линий</h2>
+    <p>В ходе работы над темой обнаружилось, что белорусские государственные органы публикуют даты проведения прямых линий в разных форматах. Известны, как минимум, 5 таких форматов, вот примеры:
+    <ol>
+        <li>16 января</li>
+        <li>02.01.2016</li>
+        <li>05.03.16</li>
+        <li>Ежемесячно первая суббота</li>
+        <li>Первая среда первого месяца каждого квартала</li>        
+    </ol>
+    </p>
+    <p>Такое разнообразие написаний дат здорово осложняет работу с ними, поэтому на будущее необходимо утверждать единый машиночитаемый формат распространения календаря прямых линий.</p>
+    <p>В качестве временной меры был сделан калькулятор, который рассчитывает даты по заданным параметрам и возвращает дату в формате "гггг-мм-дд":</p>
+    <section>
+        <p>
+        <label for="year">Год:</label>
+        <select id="year">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>            
+        </select>
+
+        <label for="weekDay">День недели:</label>
+        <select id="weekDay">
+            <option value="0">Воскресенье</option>
+            <option value="1">Понедельник</option>
+            <option value="2">Вторник</option>
+            <option value="3">Среда</option>
+            <option value="4">Четверг</option>
+            <option value="5">Пятница</option>
+            <option value="6">Суббота</option>            
+        </select>
+        </p><p>
+        <label for="everyWeekDay">Каждый n-й день недели месяца:</label>
+        <select id="everyWeekDay">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>           
+        </select>
+        </p><p>
+        <label for="everyQuarterMonth">Каждый n-й месяц квартала (если нужно):</label>
+        <select id="everyQuarterMonth">
+            <option value=""></option>  
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>         
+        </select>
+        </p><p>
+        <button type="button" id="calc">Рассчитать</button>
+        </p>
+    </section>
+    <section id="output">        
+    </section>
 </main>
 <footer>
+    <script src="js/script.js"></script>
 </footer>
+</body>
+</html>
 
 
