@@ -32,10 +32,9 @@ function pushDates(startMonth, step, year, weekday, everyWeekDay, results) {
     } else if (weekday > firstWeekDayOfMonth) {
       firstDayFound = data.getDate() + weekday - firstWeekDayOfMonth;
       
-      console.log(firstDayFound);
       firstDayFound = (everyWeekDay != 1) ? firstDayFound + (7 * (everyWeekDay - 1)) : firstDayFound;
      
-      console.log(firstDayFound);
+
       data.setDate(firstDayFound);
       
       addTolist(data, i, results)
@@ -78,8 +77,6 @@ button.onclick = function() {
   var everyQuarterMonth = document.getElementById("everyQuarterMonth").value;
   
   var quarter = (everyQuarterMonth == "") ? undefined : parseInt(everyQuarterMonth);
-  
-  console.log(year, weekDay, everyWeekDay, quarter);
   
   var dates = findDates(parseInt(year), parseInt(weekDay), parseInt(everyWeekDay), quarter);
   
