@@ -15,7 +15,14 @@ body {
     margin: 0 auto;
     padding: 0;
 }
-
 #output li {
     list-style: none;
     }
+#gallery img {
+    float: left;
+    height: 200px;
+    padding: .5em;
+}
+#temp {
+    clear: both;
+}

@@ -1,3 +1,5 @@
+var jsonData;
+
 function formatDate(number) {
   return (number < 10) ? "0" + number : number;
 }
@@ -92,3 +94,29 @@ button.onclick = function() {
     
   }
 };
+
+window.onload = function() {
+var request = new XMLHttpRequest();
+var gallery = document.getElementById("gallery");
+
+
+request.onreadystatechange = function() {
+        if (request.readyState === 4) {
+            jsonData = JSON.parse(request.responseText);
+            for (var i = 0; i < 5; i++) {
+  var face = document.createElement("div");
+  face.innerHTML = "<img src='img/" +
+                    jsonData[i].photo + "'>"
+  gallery.appendChild(face);
+  
+}
+            
+            
+        };
+      };
+    request.open("GET", "data/data.json", true);
+    request.send(null);
+
+
+
+}
