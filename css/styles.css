@@ -19,10 +19,17 @@ body {
     list-style: none;
     }
 #gallery img {
-    float: left;
     height: 200px;
     padding: .1em;
 }
 #temp {
     clear: both;
+}
+#gallery div {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+#nearest {
+    color: #F46569
 }
