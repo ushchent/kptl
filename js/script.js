@@ -91,20 +91,25 @@ button.onclick = function() {
   }
 };
 
+
 window.onload = function() {
+
   var request = new XMLHttpRequest();
   var gallery = document.getElementById("gallery");
 
   request.onreadystatechange = function() {
       if (request.readyState === 4) {
           jsonData = JSON.parse(request.responseText);
+          
           for (var i = 0; i < 5; i++) {
               var face = document.createElement("div");
-              face.innerHTML = "<img src='img/" +
-                                jsonData[i].photo + "'>"
+              var image = document.createElement("img");
+              image.setAttribute("src", "img/" + jsonData[i].photo);
+              image.setAttribute("title", jsonData[i].fio);
+              
+              face.appendChild(image);
               gallery.appendChild(face);
-  
-}
+          }
 
         };
       };

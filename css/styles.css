@@ -9,7 +9,7 @@ main, footer {
 }
 body {
     margin: 0;
-    width: 80%;
+
 }
 #caption {
     margin: 0 auto;
@@ -21,7 +21,7 @@ body {
 #gallery img {
     float: left;
     height: 200px;
-    padding: .5em;
+    padding: .1em;
 }
 #temp {
     clear: both;
